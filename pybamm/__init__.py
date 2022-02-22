@@ -118,7 +118,6 @@ from .models.submodels import (
     particle,
     porosity,
     thermal,
-    tortuosity,
     particle_mechanics,
 )
 from .models.submodels.interface import kinetics

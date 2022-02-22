@@ -947,11 +947,11 @@ class BaseBatteryModel(pybamm.BaseModel):
             )
         self.submodels["external circuit"] = model
 
-    def set_tortuosity_submodels(self):
-        self.submodels["electrolyte tortuosity"] = pybamm.tortuosity.Bruggeman(
+    def set_transport_efficiency_submodels(self):
+        self.submodels["electrolyte transport_efficiency"] = pybamm.transport_efficiency.Bruggeman(
             self.param, "Electrolyte", self.options
         )
-        self.submodels["electrode tortuosity"] = pybamm.tortuosity.Bruggeman(
+        self.submodels["electrode transport_efficiency"] = pybamm.transport_efficiency.Bruggeman(
             self.param, "Electrode", self.options
         )
 
