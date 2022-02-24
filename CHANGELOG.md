@@ -47,7 +47,7 @@
 -   `PyBaMM` is now importable in `Linux` systems where `jax` is already installed ([#1874](https://github.com/pybamm-team/PyBaMM/pull/1874))
 -   Simulations with drive cycles now support `initial_soc` ([#1842](https://github.com/pybamm-team/PyBaMM/pull/1842))
 -   Fixed bug in expression tree simplification ([#1831](https://github.com/pybamm-team/PyBaMM/pull/1831))
--   Solid transport_efficiency is now correctly calculated with Bruggeman coefficient of the respective electrode ([#1773](https://github.com/pybamm-team/PyBaMM/pull/1773))
+-   Solid tortuosity is now correctly calculated with Bruggeman coefficient of the respective electrode ([#1773](https://github.com/pybamm-team/PyBaMM/pull/1773))
 
 # [v21.11](https://github.com/pybamm-team/PyBaMM/tree/v21.11) - 2021-11-30
 
@@ -487,7 +487,7 @@ This release introduces many new features and optimizations. All models can now 
 -   Added optional R(x) distribution in particle models ([#745](https://github.com/pybamm-team/PyBaMM/pull/745))
 -   Generalized importing of external variables ([#728](https://github.com/pybamm-team/PyBaMM/pull/728))
 -   Separated active and inactive material volume fractions ([#726](https://github.com/pybamm-team/PyBaMM/pull/726))
--   Added submodels for transport_efficiency ([#726](https://github.com/pybamm-team/PyBaMM/pull/726))
+-   Added submodels for tortuosity ([#726](https://github.com/pybamm-team/PyBaMM/pull/726))
 -   Simplified the interface for setting current functions ([#723](https://github.com/pybamm-team/PyBaMM/pull/723))
 -   Added Heaviside operator ([#723](https://github.com/pybamm-team/PyBaMM/pull/723))
 -   New extrapolation methods ([#707](https://github.com/pybamm-team/PyBaMM/pull/707))
