@@ -78,3 +78,23 @@ class TimeSolveDFN:
 
     def time_solve_model(self, solve_first):
         TimeSolveDFN.solver.solve(self.model, t_eval=self.t_eval)
+
+class TimeSolveBaicSPM:
+    params = [True, False]
+    solver = pybamm.CasadiSolver()
+
+    def setup(self, solve_first):
+        self.model = pybamm.lithium_ion.BasicSPM()
+        c_rate = 1
+        tmax = 4000 / c_rate
+        nb_points = 500
+        self.t_eval = np.linspace(0, tmax, nb_points)
+        prepare_model(self.model)
+        if solve_first:
+            solve_model_once(self.model, TimeSolveBaicSPM.solver, self.t_eval)
+
+    def time_solve_model(self, solve_first):
+        TimeSolveBaicSPM.solver.solve(self.model, t_eval=self.t_eval)
+
+
+
