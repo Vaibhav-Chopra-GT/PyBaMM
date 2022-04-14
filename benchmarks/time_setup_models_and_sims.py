@@ -27,6 +27,26 @@ class TimeBuildSPM:
         compute_discretisation(self.model, self.param).process_model(self.model)
 
 
+class TimeBuildBasicSPM:
+    def __init__(self):
+        self.param = pybamm.ParameterValues("Marquis2019")
+
+    def time_setup_BasicSPM(self):
+        self.model = pybamm.lithium_ion.BasicSPM()
+        self.param.process_model(self.model)
+        compute_discretisation(self.model, self.param).process_model(self.model)
+
+
+class TimeBuildSPM2:
+    def __init__(self):
+        self.param = pybamm.ParameterValues("ORegan2021")
+
+    def time_setup_SPM(self):
+        self.model = pybamm.lithium_ion.SPM()
+        self.param.process_model(self.model)
+        compute_discretisation(self.model, self.param).process_model(self.model)
+
+
 class TimeBuildSPMe:
     def __init__(self):
         self.param = pybamm.ParameterValues("Marquis2019")
@@ -45,6 +65,18 @@ class TimeBuildDFN:
         self.model = pybamm.lithium_ion.DFN()
         self.param.process_model(self.model)
         compute_discretisation(self.model, self.param).process_model(self.model)
+
+
+class TimeBuildBasicSPMSimulation:
+    
+   
+
+    def __init__(self):
+        self.param = pybamm.ParameterValues("Marquis2019")
+
+    def time_setup_BasicSPM_simulation(self):
+        self.model = pybamm.lithium_ion.BasicSPM()
+        pybamm.Simulation(self.model, parameter_values=self.param, C_rate=1)
 
 
 class TimeBuildSPMSimulation:
@@ -105,3 +137,6 @@ class TimeBuildDFNSimulation:
             pybamm.Simulation(self.model, parameter_values=self.param, experiment=exp)
         else:
             pybamm.Simulation(self.model, parameter_values=self.param, C_rate=1)
+
+
+

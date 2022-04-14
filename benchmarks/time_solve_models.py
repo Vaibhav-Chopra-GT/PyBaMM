@@ -79,6 +79,7 @@ class TimeSolveDFN:
     def time_solve_model(self, solve_first):
         TimeSolveDFN.solver.solve(self.model, t_eval=self.t_eval)
 
+
 class TimeSolveBaicSPM:
     params = [True, False]
     solver = pybamm.CasadiSolver()
@@ -95,6 +96,3 @@ class TimeSolveBaicSPM:
 
     def time_solve_model(self, solve_first):
         TimeSolveBaicSPM.solver.solve(self.model, t_eval=self.t_eval)
-
-
-
